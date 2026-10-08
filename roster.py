@@ -62,12 +62,25 @@ def get_semester() -> dict:
     semester_info['semester'] = semester
     return semester_info
 
-def add_classes_to_semester(semester_info: dict):
-
-    class_info = get_class_and_section()
+def add_classes_to_semester(semester_info: dict) -> dict:
+    """Allow users to add classes to a semester"""
 
     semester_info['classes'] = []
-    semester_info['classes'].append(class_info)
+
+    answer = input("Please enter classes to add to semester. When complete, enter done")
+    while answer != done:
+        semester_info['classes'].append(get_class_and_section())
+
+    return semester_info
+
+def fetch_semester_year(semester_info: dict) -> str:
+    
+    return(semester_info['semester'])
+
+
+    
+
+
 
 
 
